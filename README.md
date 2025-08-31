@@ -6,6 +6,9 @@ wget -qO- https://astral.sh/uv/install.sh | sh
 
 # Github Action
 sudo ln -s /home/ubuntu/.local/bin/uv /usr/local/bin/uv
+
+# Setup virtual environment
+uv sync
 ```
 
 ## Async views
