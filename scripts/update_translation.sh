@@ -1,8 +1,8 @@
 # Create the message file
-# source $PWD/.venv/bin/activate && ./src/manage.py makemessages -l fr --pythonpath $PWD/django_skeleton
-# source $PWD/.venv/bin/activate && ./src/manage.py makemessages -l zh-cn --pythonpath $PWD/django_skeleton
+# source $PWD/.venv/bin/activate && ./src/manage.py makemessages -l fr --pythonpath $PWD/django_tw
+# source $PWD/.venv/bin/activate && ./src/manage.py makemessages -l zh-cn --pythonpath $PWD/django_tw
 
-# Update existing messages file, execute from django_skeleton/scripts/
+# Update existing messages file, execute from django_tw/scripts/
 PROJECT_PATH=$PWD
 cd src
 source $PROJECT_PATH/.venv/bin/activate && ./manage.py makemessages -a

@@ -14,10 +14,10 @@ STATICFILES_DIRS = [BASE_DIR.joinpath("static")]
 STATIC_ROOT = "/usr/share/nginx/html/static/"
 MEDIA_ROOT = "/usr/share/nginx/html/media/"
 
-# Django Compressor for css and javascript
-# No new files are generated during a request in production
-COMPRESS_OFFLINE = True
-COMPRESS_ENABLED = True
+# # Django Compressor for css and javascript
+# # No new files are generated during a request in production
+# COMPRESS_OFFLINE = True
+# COMPRESS_ENABLED = True
 
 # Cache the templates in memory for speed-up
 loaders = [

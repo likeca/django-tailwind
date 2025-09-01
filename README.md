@@ -52,7 +52,7 @@ pip install -r requirements/production.txt
 !!! project name CAN NOT use '-' due to python conflict
 
 ## Installation
-1. Change project name and django_skeleton folder name
+1. Change project name and django_tw folder name
 
 ### Quick start
 To set up a development environment quickly, first install Python 3. It
@@ -113,7 +113,7 @@ python manage.py ping_google
 ```
 
 # Daphne
-daphne django_skeleton.asgi:application
+daphne django_tw.asgi:application
 
 # Django Auto Translate - django-autotranslate
 ```bash
@@ -183,5 +183,4 @@ python manage.py showmigrations
 # Django Live Reload
 ```bash
 python manage.py runserver
-python manage.py livereload
 ```

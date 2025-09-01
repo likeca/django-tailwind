@@ -20,16 +20,16 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 # Django Debug Toolbar
+# export DJANGO_ENVIRONMENT=Development
+# python manage.py migrate debug_toolbar
 INSTALLED_APPS += (
     "debug_toolbar",
     # 'autotranslate',            # No need to deploy in production
 )
 
 # Additional middleware introduced by debug toolbar
-MIDDLEWARE += (
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
-    "livereload.middleware.LiveReloadScript",
-)
+MIDDLEWARE += ("debug_toolbar.middleware.DebugToolbarMiddleware",)
+
 # Allow internal IPs for debugging
 INTERNAL_IPS = [
     "127.0.0.1",

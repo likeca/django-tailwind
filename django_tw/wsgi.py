@@ -1,14 +1,21 @@
 """
 For local development "python manage.py runserver"
 """
+
 import os
 
 if os.environ.get("DJANGO_ENVIRONMENT") == "Development":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_skeleton.settings.environments.development")
+    os.environ.setdefault(
+        "DJANGO_SETTINGS_MODULE", "django_tw.settings.environments.development"
+    )
 elif os.environ.get("DJANGO_ENVIRONMENT") == "Container":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_skeleton.settings.environments.container")
+    os.environ.setdefault(
+        "DJANGO_SETTINGS_MODULE", "django_tw.settings.environments.container"
+    )
 else:
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_skeleton.settings.environments.virtualmachine")
+    os.environ.setdefault(
+        "DJANGO_SETTINGS_MODULE", "django_tw.settings.environments.virtualmachine"
+    )
 
 from django.core.wsgi import get_wsgi_application
 
