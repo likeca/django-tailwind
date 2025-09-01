@@ -24,11 +24,15 @@ DEBUG_TOOLBAR_CONFIG = {
 # python manage.py migrate debug_toolbar
 INSTALLED_APPS += (
     "debug_toolbar",
+    "django_browser_reload",
     # 'autotranslate',            # No need to deploy in production
 )
 
 # Additional middleware introduced by debug toolbar
-MIDDLEWARE += ("debug_toolbar.middleware.DebugToolbarMiddleware",)
+MIDDLEWARE += (
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+)
 
 # Allow internal IPs for debugging
 INTERNAL_IPS = [
@@ -43,8 +47,8 @@ INTERNAL_IPS = [
 
 # Disable browsable API render of django-rest-framework
 # REST_FRAMEWORK = {
-#     "DEFAULT_RENDERER_CLASSES": [
-#         "rest_framework.renderers.JSONRenderer",
+#     'DEFAULT_RENDERER_CLASSES': [
+#         'rest_framework.renderers.JSONRenderer',
 #     ],
 # }
 

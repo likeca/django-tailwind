@@ -180,7 +180,24 @@ python manage.py migrate
 python manage.py showmigrations
 ```
 
-# Django Live Reload
+# Django Tailwind
+[Django-Tailwind](https://django-tailwind.readthedocs.io/en/latest/)
 ```bash
-python manage.py runserver
+# Create a Tailwind CSS compatible Django app "theme"
+python manage.py tailwind init
+
+# Install Tailwind CSS dependencies
+python manage.py tailwind install
+
+# Start only the Tailwind watcher, also need to run "python manage.py runserver"
+python manage.py tailwind start
+
+# Create a production build
+python manage.py tailwind build
+
+# Check if there are any updates
+python manage.py tailwind check-updates
+
+# Update to latest version of Tailwind CSS
+python manage.py tailwind update
 ```

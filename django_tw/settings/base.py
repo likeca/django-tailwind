@@ -11,6 +11,7 @@ from .env_vars import env, BASE_DIR
 
 from .allauth import *
 from .compressor import *
+from .tailwind import *
 
 # from .channels import *
 from .crispy_form import *
@@ -99,6 +100,8 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.staticfiles",
     "compressor",
+    "tailwind",
+    "theme",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
