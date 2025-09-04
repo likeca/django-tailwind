@@ -166,6 +166,10 @@ python manage.py shell
 # Apply all change to DB
 python manage.py migrate
 
+# for debug_toolbar
+export DJANGO_ENVIRONMENT=Development
+python manage.py migrate
+
 # Squash merge from 0003_faqcategory_order (last migration) to 0002_faqcategory_faqs
 python manage.py squashmigrations products 0002_faqcategory_faqs 0003_faqcategory_order
 

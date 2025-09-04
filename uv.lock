@@ -483,7 +483,6 @@ dependencies = [
     { name = "dj-rest-auth" },
     { name = "django" },
     { name = "django-allauth" },
-    { name = "django-browser-reload" },
     { name = "django-compressor" },
     { name = "django-countries" },
     { name = "django-dbbackup" },
@@ -506,6 +505,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "cookiecutter" },
+    { name = "django-browser-reload" },
     { name = "django-debug-toolbar" },
     { name = "pylint" },
     { name = "pylint-django" },
@@ -519,7 +519,6 @@ requires-dist = [
     { name = "dj-rest-auth", specifier = ">=7.0.1" },
     { name = "django", specifier = "==5.2.5" },
     { name = "django-allauth", specifier = "==65.2.0" },
-    { name = "django-browser-reload", specifier = ">=0.2.2" },
     { name = "django-compressor", specifier = ">=4.5.1" },
     { name = "django-countries", specifier = ">=7.6.1" },
     { name = "django-dbbackup", specifier = ">=5.0.0" },
@@ -542,6 +541,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "cookiecutter", specifier = ">=2.1.1" },
+    { name = "django-browser-reload", specifier = ">=0.2.2" },
     { name = "django-debug-toolbar", specifier = ">=6.0.0" },
     { name = "pylint", specifier = ">=3.3.8" },
     { name = "pylint-django", specifier = ">=2.6.1" },
