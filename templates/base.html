@@ -15,10 +15,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="language" content="English" />
-    <meta name="keywords" content="django_tw" />
-    <meta name="description" content="django_tw" />
+    <meta name="keywords" content="{% block keywords %} django_tw keywords. {% endblock keywords %}" />
+    <meta name="description" content="{% block description %}django_tw description.{% endblock description %}" />
     <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}" />
+
     {% tailwind_css %}
+
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_MEASUREMENT_ID }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -39,7 +41,7 @@
       <nav>
         <div class="navbar shadow-sm min-h-0 h-12">
           <img src="{% static 'site/img/logo.svg' %}" alt="logo" loading="lazy" class="h-8" />
-          <a href="/" class="ms-3">{% include '_brandname.html' %}</a>
+          <a href="{% url "home" %}" class="ms-3">{% include "_brandname.html" %}</a>
         </div>
       </nav>
     {% endblock navbar %}

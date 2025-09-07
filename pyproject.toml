@@ -5,7 +5,7 @@ description = "Django Tailwind - Includes Django REST API and GraphQL"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "django==5.2.5",
+    "django==5.2.6",
     "daphne>=4.1.0",               # Django ASGI deployment for production
     "django-allauth==65.2.0",      # Authentication, registration, account management as well as 3rd party (social) account authentication
     "django-countries>=7.6.1",     # Country for use with forms, flag icons static files, and a country field for models
@@ -19,7 +19,7 @@ dependencies = [
     "django-compressor>=4.5.1", # Django Compressor Compress CSS and JS, $ pip install rcssmin --install-option="--without-c-extensions"
     "django-libsass>=0.9",      # Django Libsass is a Django app that provides a template tag for compiling Sass stylesheets# Django Compressor compile scss to css
 
-    "google-api-python-client>=2.179.0", # Google API client library for Python
+    "google-api-python-client>=2.181.0", # Google API client library for Python
     "google-auth>=2.40.3",               # Google Authentication Library for Python
     "google-auth-oauthlib>=1.2.2",       # Google OAuth2 Library for Python
     "google-auth-httplib2>=0.2.0",       # Google HTTP Client Library for Python
