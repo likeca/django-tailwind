@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Django Tailwind",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "tailwind",
+                "start"
+            ],
+            "django": true
+        },
+        {
             "name": "Python: Django",
             "type": "debugpy",
             "request": "launch",
@@ -18,6 +30,16 @@
                 "DJANGO_ENVIRONMENT": "Development"
             },
             "django": true
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch All",
+            "configurations": [
+                "Python: Django Tailwind",
+                "Python: Django"
+            ],
+            "stopAll": true
         }
     ]
 }

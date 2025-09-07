@@ -8,159 +8,78 @@
   <head>
     <title>
       {% block head_title %}
-        {% include '_brandname.html' %}
-      {% endblock %}
+        {% include "_brandname.html" %}
+      {% endblock head_title %}
     </title>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="language" content="English" />
-    <meta name="og:url"
-      content="{% block meta_url %}
-        {{ SITE_URL }}
-      {% endblock %}" />
-    <meta name="og:site_name" content="{{ SITE_NAME }}" />
-    <meta name="og:type"
-      content="{% block meta_type %}
-        
-        
-        
-        
-        
-        
-        article
-
-
-
-
-
-
-      {% endblock %}" />
-    <meta name="og:title"
-      content="{% block meta_title %}
-        {% include '_brandname.html' %}
-      {% endblock %}" />
-    <meta name="og:description"
-      content="{% block meta_description %}
-        
-        
-        
-        
-        
-        
-        django_tw description
-
-
-
-
-
-
-      {% endblock %}" />
-    <meta name="og:image"
-      content="{% block meta_image %}
-        {{ SITE_URL }}static/site/img/logo.png
-
-
-
-
-
-
-      {% endblock %}" />
-    <meta name="twitter:site" content="@django_tw" />
-    <meta name="twitter:title"
-      content="{% block twitter_meta_title %}
-        {% include '_brandname.html' %}
-      {% endblock %}" />
-    <meta name="twitter:description"
-      content="{% block twitter_meta_description %}
-        
-        
-        
-        
-        
-        
-        django_tw description
-
-
-
-
-
-
-      {% endblock %}" />
-    <meta name="twitter:image"
-      content="{% block twitter_meta_image %}
-        {{ SITE_URL }}static/site/img/logo.png
-
-
-
-
-
-
-      {% endblock %}" />
+    <meta name="keywords" content="django_tw" />
+    <meta name="description" content="django_tw" />
     <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}" />
-
     {% tailwind_css %}
-
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_MEASUREMENT_ID }}"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', '{{ GOOGLE_MEASUREMENT_ID }}')
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "{{ GOOGLE_MEASUREMENT_ID }}");
     </script>
 
     {% block extra_head_script %}
-
-    {% endblock %}
+    {% endblock extra_head_script %}
   </head>
-
   <body>
-    <div id="language" style="display: none;">{{ LANGUAGE_CODE }}</div>
+    <div id="language" style="display: none">{{ LANGUAGE_CODE }}</div>
     {% block navbar %}
       <nav>
-        <div class="navbar bg-base-100 shadow-sm">
-          <img src="{% static 'site/img/logo.svg' %}" alt="logo" loading="lazy" class="h-10" />
-          <a href="/" class="btn btn-ghost text-xl">{% include '_brandname.html' %}</a>
+        <div class="navbar shadow-sm min-h-0 h-12">
+          <img src="{% static 'site/img/logo.svg' %}" alt="logo" loading="lazy" class="h-8" />
+          <a href="/" class="ms-3">{% include '_brandname.html' %}</a>
         </div>
       </nav>
-    {% endblock %}
+    {% endblock navbar %}
 
     {% block messages %}
       {% if messages %}
         {% for message in messages %}
           <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
             {{ message|safe }}
-            <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close">
+            </button>
           </div>
         {% endfor %}
       {% endif %}
-    {% endblock %}
+    {% endblock messages %}
 
     {% block splash %}
-
-    {% endblock %}
+    {% endblock splash %}
 
     {% block content %}
       <div class="container">
         <div class="starter-template">
           <h1>New Project</h1>
           <p class="lead">
-            Use this document as a way to quickly start any new project.<br /> All you get is this text and a mostly barebones HTML document.
+            Use this document as a way to quickly start any new project.
+            <br />
+            All you get is this text and a mostly barebones HTML document.
           </p>
         </div>
       </div>
-    {% endblock %}
+    {% endblock content %}
 
-    {% comment %}Site footer{% endcomment %}
     {% block footer %}
       <footer class="footer">
         <div class="container">
           <div class="row">
             <div class="col-8">
-              <p style="margin-bottom: 0px; font-size: 0.8em;">
-                <img src="{% static 'site/img/logo.png' %}" alt="logo" width="30" height="30" style="margin-top: -10px" /> &copy;{% now 'Y' %}django_tw.com All Rights Reserved.
+              <p style="margin-bottom: 0px; font-size: 0.8em">
+                <img src="{% static 'site/img/logo.png' %}" alt="logo" width="30" height="30" style="margin-top: -10px" />
+                &copy;{% now 'Y' %}django_tw.com All Rights Reserved.
               </p>
             </div>
             <div class="col-4 text-right">
@@ -179,14 +98,13 @@
           </div>
         </div>
       </footer>
-    {% endblock %}
+    {% endblock footer %}
 
     {% compress js %}
-    <script src="{% static 'site/js/site.js' %}"></script>
+      <script src="{% static 'site/js/site.js' %}"></script>
     {% endcompress %}
 
     {% block scripts %}
-
-    {% endblock %}
+    {% endblock scripts %}
   </body>
 </html>
