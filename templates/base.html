@@ -18,7 +18,6 @@
     <meta name="keywords" content="{% block keywords %} django_tw keywords. {% endblock keywords %}" />
     <meta name="description" content="{% block description %}django_tw description.{% endblock description %}" />
     <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}" />
-
     {% tailwind_css %}
 
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_MEASUREMENT_ID }}"></script>
@@ -38,18 +37,59 @@
   <body>
     <div id="language" class="hidden">{{ LANGUAGE_CODE }}</div>
     {% block navbar %}
-      <nav id="navbar" class="fixed w-full bg-white top-0 animated transition duration-1000 ease-in-out">
-        <div class="navbar shadow-sm min-h-0 h-12">
+      <nav id="navbar" class="navbar fixed w-full bg-white top-0 animated transition duration-1000 ease-in-out min-h-0 h-12">
+        <div class="navbar-start">
           <img src="{% static 'site/img/logo.svg' %}" alt="logo" loading="lazy" class="h-8" />
           <a href="{% url "home" %}" class="ms-3">{% include "_brandname.html" %}</a>
-        </div>
 
-        <div class="collapse navbar-collapse ps-3 pe-0" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-2">
-            {% block navbar_left %}{% endblock %}
+          <ul class="menu menu-horizontal">
+            {% block navbar_left %}
+            {% endblock navbar_left %}
           </ul>
         </div>
+
+        <div class="navbar-end">
+          <button class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+
+          </button>
+          <button class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+              </svg>
+            </div>
+          </button>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost hover:bg-transparent border-0 active:bg-transparent">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              {% block navbar_right %}
+              {% endblock navbar_right %}
+            </ul>
+          </div>
+        </div>
       </nav>
+
+
+      {% comment %} <nav id="navbar" class="fixed w-full bg-white top-0 animated transition duration-1000 ease-in-out">
+        <div class="navbar-start shadow-sm min-h-0 h-12">
+ 
+        </div>
+
+        <div class="navbar-end me-3">
+
+        </div>
+      </div>
+
+
+      </nav> {% endcomment %}
     {% endblock navbar %}
 
     {% block messages %}
@@ -57,8 +97,7 @@
         {% for message in messages %}
           <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
             {{ message|safe }}
-            <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close">
-            </button>
+            <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         {% endfor %}
       {% endif %}
@@ -74,7 +113,7 @@
           <p class="lead">
             Use this document as a way to quickly start any new project.
             <br />
-            All you get is this text and a mostly barebones HTML document.
+            All you get is this text and a mostly bare bones HTML document.
           </p>
         </div>
       </div>

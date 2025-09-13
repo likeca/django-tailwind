@@ -205,3 +205,6 @@ python manage.py tailwind check-updates
 # Update to latest version of Tailwind CSS
 python manage.py tailwind update
 ```
+
+# Icons
+[Heroicons](https://heroicons.com/)
