@@ -10,8 +10,8 @@ PROVINCE = (
     ("NT", "Northwest Territories"),
     ("NU", "Nunavut"),
     ("ON", "Ontario"),
-    ("PE",  "Prince Edward Island"),
-    ("QC",  "Québec"),
-    ("SK",  "Saskatchewan"),
-    ("YT",  "Yukon")
+    ("PE", "Prince Edward Island"),
+    ("QC", "Québec"),
+    ("SK", "Saskatchewan"),
+    ("YT", "Yukon"),
 )

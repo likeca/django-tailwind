@@ -15,6 +15,7 @@
 
 import logging
 
+
 class NewStyleLogMessage(object):
     def __init__(self, message, *args, **kwargs):
         self.message = message
@@ -23,10 +24,10 @@ class NewStyleLogMessage(object):
 
     def __str__(self):
         args = (i() if callable(i) else i for i in self.args)
-        kwargs = dict((k, v() if callable(v) else v)
-                      for k, v in self.kwargs.items())
+        kwargs = dict((k, v() if callable(v) else v) for k, v in self.kwargs.items())
 
         return self.message.format(*args, **kwargs)
+
 
 class StyleAdapter(logging.LoggerAdapter):
     def __init__(self, logger, extra=None):
@@ -35,8 +36,11 @@ class StyleAdapter(logging.LoggerAdapter):
     def log(self, level, msg, *args, **kwargs):
         if self.isEnabledFor(level):
             msg, log_kwargs = self.process(msg, kwargs)
-            self.logger._log(level, NewStyleLogMessage(msg, *args, **kwargs), (), **log_kwargs)
+            self.logger._log(
+                level, NewStyleLogMessage(msg, *args, **kwargs), (), **log_kwargs
+            )
 
-logger = StyleAdapter(logging.getLogger('project'))
+
+logger = StyleAdapter(logging.getLogger("project"))
 # Emits "Lazily formatted log entry: 123 foo" in log
 # logger.debug('Lazily formatted entry: {0} {keyword}', 123, keyword='foo')

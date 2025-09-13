@@ -1,11 +1,12 @@
 from django.contrib import sitemaps
 from django.urls import reverse
 
+
 class StaticViewSitemap(sitemaps.Sitemap):
-    changefreq = 'monthly'
+    changefreq = "monthly"
 
     def items(self):
-        return ['home', 'about']
+        return ["home", "about"]
 
     def location(self, item):
         return reverse(item)

@@ -5,7 +5,8 @@ from django.dispatch import receiver
 from . import models
 
 import logging
-logger = logging.getLogger('project')
+
+logger = logging.getLogger("project")
 
 
 @receiver(post_save, sender=User)
@@ -15,7 +16,7 @@ def create_profile_handler(sender, instance, created, **kwargs):
     # Create the profile object, only if it is newly created
     profile = models.Profile(user=instance)
     profile.save()
-    logger.info('New user profile for %s created', instance)
+    logger.info("New user profile for %s created", instance)
 
 
 @receiver(user_logged_in)
