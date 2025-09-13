@@ -43,6 +43,12 @@
           <img src="{% static 'site/img/logo.svg' %}" alt="logo" loading="lazy" class="h-8" />
           <a href="{% url "home" %}" class="ms-3">{% include "_brandname.html" %}</a>
         </div>
+
+        <div class="collapse navbar-collapse ps-3 pe-0" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-2">
+            {% block navbar_left %}{% endblock %}
+          </ul>
+        </div>
       </nav>
     {% endblock navbar %}
 

@@ -16,7 +16,6 @@ sitemaps = {
     "static": sitemaps.StaticViewSitemap,
 }
 
-
 urlpatterns = [
     # Remove Django admin login for security reason
     path("admin/", admin.site.urls),
@@ -47,7 +46,6 @@ urlpatterns += i18n_patterns(
     path("accounts/profile/", include("profiles.urls", namespace="profiles")),
     path("tenants/", include("tenants.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
-    # path('theme/', include('theme.urls')),
 )
 
 # User-uploaded files like profile pics need to be served in development
